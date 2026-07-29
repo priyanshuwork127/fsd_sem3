@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: radial-gradient(circle at top, #111, #000);
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .calculator {
+            width: min(420px, 95vw);
+            padding: 24px;
+            background: rgba(24, 24, 24, 0.96);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 24px;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+        }
+        .display {
+            min-height: 72px;
+            background: #090909;
+            color: #d4ffda;
+            border-radius: 18px;
+            padding: 18px 22px;
+            margin-bottom: 18px;
+            text-align: right;
+            font-size: 2.4rem;
+            overflow-x: auto;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+        button {
+            border: none;
+            border-radius: 16px;
+            padding: 18px 0;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.14s ease, background 0.14s ease;
+        }
+        button:hover {
+            transform: translateY(-2px);
+        }
+        .btn-number {
+            background: #2f2f2f;
+            color: #fff;
+        }
+        .btn-operator {
+            background: #ff9f0a;
+            color: #111;
+        }
+        .btn-action {
+            background: #4f4f4f;
+            color: #fff;
+        }
+        .btn-zero {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="btn-action" data-action="clear">C</button>
+            <button class="btn-action" data-action="delete">DEL</button>
+            <button class="btn-action" data-action="percent">%</button>
+            <button class="btn-operator" data-action="operator">/</button>
+            <button class="btn-number" data-number="7">7</button>
+            <button class="btn-number" data-number="8">8</button>
+            <button class="btn-number" data-number="9">9</button>
+            <button class="btn-operator" data-action="operator">*</button>
+            <button class="btn-number" data-number="4">4</button>
+            <button class="btn-number" data-number="5">5</button>
+            <button class="btn-number" data-number="6">6</button>
+            <button class="btn-operator" data-action="operator">-</button>
+            <button class="btn-number" data-number="1">1</button>
+            <button class="btn-number" data-number="2">2</button>
+            <button class="btn-number" data-number="3">3</button>
+            <button class="btn-operator" data-action="operator">+</button>
+            <button class="btn-number btn-zero" data-number="0">0</button>
+            <button class="btn-number" data-number=".">.</button>
+            <button class="btn-action" data-action="equals">=</button>
+        </div>
+    </div>
+    <script src="lect1.js"></script>
+</body>
+</html>
