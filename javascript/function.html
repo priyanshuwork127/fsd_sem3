@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<body>
+    <h1>Multiplication of two numbers</h1>
+    <button onclick="cl()">Multiply</button>
+
+    <h4>Result:</h4>
+    <h3 id="dc">Ans</h3>
+
+    <script>
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        function cl() {
+            let x = Number(prompt("Enter first number"));
+            let y = Number(prompt("Enter second number"));
+
+            let k = document.getElementById("dc");
+            k.innerHTML = multiply(x, y);
+        }
+    </script>
+</body>
+</html>

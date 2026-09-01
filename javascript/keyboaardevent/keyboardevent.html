@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width:300px;
+            border:1px solid red;
+            border-radius:10px;
+            background-color: antiquewhite;
+            box-shadow: inset -3px 3px 10px #000;
+        }
+        #form{
+            width:400px;
+            display:flex;
+            flex-direction: column;
+            background-color: rgb(246, 202, 148);
+            color:blue;
+            border-radius:10px;
+            box-shadow: -3px 3px 10px grey;
+            margin:100px auto;
+            padding:10px 10px 10px 10px;
+        }
+        /* fieldset{
+            width:400px;
+            background-color: #000;
+        } */
+        body{
+            display:box;
+            align-items: center;
+            justify-content: center;
+            padding:auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1 id="h1">Keyboard event</h1>
+
+        <form id="form">
+            <h1>Keyboard events</h1>
+            <label for="keydown"">onkeydown</label>
+            <input id="keydown" type="text" onkeydown="document.getElementById('form').style.background=this.value">
+            <label for="keyup">onkeyup</label>
+            <input id="keyup" type="text" onkeyup="document.getElementById('form').style.background=this.value">
+            <label for="keypress">onkeypress</label>
+            <input id="keypress" type="text" onkeypress="document.getElementById('form').style.background=this.value"> 
+        </form>
+
+</body>
+</html>
