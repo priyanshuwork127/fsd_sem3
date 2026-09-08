@@ -1,0 +1,3 @@
+hello guys,This is the expeiment no 2 of fsd workshop,in this we will learn about file system module,Dated->8/10/2026
+In the file system module we perform CRUD operation
+Method->Sync,Async,then-catch promises,async await
