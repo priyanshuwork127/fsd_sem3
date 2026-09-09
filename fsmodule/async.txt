@@ -1,0 +1,2 @@
+Hello today we are going to study async in fs
+ Then we do then-catch

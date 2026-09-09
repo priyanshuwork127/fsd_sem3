@@ -32,5 +32,5 @@ if(fs.existsSync("Student.txt")){
     console.log("File exists");
 }
 else{
-    console.log("File not exists");
+    console.log("File not exists,need to create");
 }
