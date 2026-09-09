@@ -1,0 +1,2 @@
+Hello guys,now we will going with promises
+ Then we will do the last part

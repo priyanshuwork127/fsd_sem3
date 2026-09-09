@@ -3,7 +3,7 @@ const fs=require("fs").promises;
 //write file
 async function writeFile(){
     try{
-        await fs.writeFile("promise.txt","Hello guys,now we will going with promises");
+        await fs.writeFile("await.txt","Hello guys,now we will going with async await");
         console.log("File is created");
     }
     catch(error){
@@ -16,7 +16,7 @@ writeFile();
 
 async function readFile(){
     try{
-        const data=await fs.readFile("promise.txt","utf8");
+        const data=await fs.readFile("await.txt","utf8");
         console.log(data);
     }
     catch(error){
@@ -30,7 +30,7 @@ readFile();
 
 async function appendFile(){
     try{
-        await fs.appendFile("promise.txt","\n Then we will do the last part","utf8");
+        await fs.appendFile("await.txt","\n Then we will do the last part","utf8");
         console.log("data is updated in the file");
     }
     catch(error){
@@ -45,7 +45,7 @@ readFile();
 
 async function renameFile(){
     try{
-        await fs.rename("promise.txt","promise_catch.txt");
+        await fs.rename("await.txt","async_await.txt");
         console.log("Renamed");
     }
     catch(error){
@@ -53,6 +53,7 @@ async function renameFile(){
     }
 }
 renameFile()
+
 //DELETING FILE
 
 async function unlink(){
