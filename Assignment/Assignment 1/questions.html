@@ -1,50 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Questions</title>
+    <title>Quiz Questions</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="text-align: center;">
+<body>
 
     <div id="question">
 
-        <h3 id="Qno">Question no:</h3>
+        <h1>Quiz</h1>
 
-        <h5 id="quest">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Blanditiis quas fugiat libero at quo aperiam, sunt nam nobis,
-            non odit accusamus perferendis dicta, quibusdam alias quidem
-            ad consequuntur sint cum.
-        </h5>
+        <h3 id="Qno">Question no: 1</h3>
 
-        <div id="question-box" >
+        <p id="quest"></p>
 
-            <input type="radio" id="radio1" name="option">
-            <label for="radio1" id="option1"></label>
+        <div id="question-box">
 
-            <input type="radio" id="radio2" name="option">  
-            <label for="radio2" id="option2"></label>
+            <div class="option" id="option1"></div>
 
-            <input type="radio" id="radio3" name="option">
-            <label for="radio3" id="option3"></label>
+            <div class="option" id="option2"></div>
 
-            <input type="radio" id="radio4" name="option">
-            <label for="radio4" id="option4"></label>
-            <br>
+            <div class="option" id="option3"></div>
+
+            <div class="option" id="option4"></div>
 
         </div>
 
-        <div>
-
-            <button id="next" onclick="next()">Next question</button>
-
-            <button id="submit">Submit quiz</button>
-
+        <div id="buttons">
+            <button id="next">Next Question</button>
+            <button id="submit">Submit Quiz</button>
         </div>
+
+        <p id="keyboard-info">
+            Use <b>1, 2, 3, 4</b> to select an option |
+            Press <b>Enter</b> for next question
+        </p>
 
     </div>
 
@@ -52,4 +45,3 @@
 
 </body>
 </html>
-

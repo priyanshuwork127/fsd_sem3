@@ -1,3 +1,4 @@
+
 const fsdq = [
     {
         question: "Which HTML tag is used to define an independent, self-contained piece of content that makes sense on its own, like a blog post or news story?",
@@ -31,60 +32,119 @@ const fsdq = [
     }
 ];
 
-let radio1 = document.getElementById("radio1");
-let radio2 = document.getElementById("radio2");
-let radio3 = document.getElementById("radio3");
-let radio4 = document.getElementById("radio4");
-
-let ques = document.getElementById("quest");
-let option1 = document.getElementById("option1");
-let option2 = document.getElementById("option2");
-let option3 = document.getElementById("option3");
-let option4 = document.getElementById("option4");
-let qno = document.getElementById("Qno");
-
 let i = -1;
 let score = 0;
+let selectedOption = -1;
 
-function next() {
-    let selectedOption = -1;
+const ques = document.getElementById("quest");
+const qno = document.getElementById("Qno");
 
-    if (radio1.checked) {
-        selectedOption = 0;
+const options = [
+    document.getElementById("option1"),
+    document.getElementById("option2"),
+    document.getElementById("option3"),
+    document.getElementById("option4")
+];
+
+const nextButton = document.getElementById("next");
+const submitButton = document.getElementById("submit");
+
+function showQuestion() {
+
+    i++;
+
+    if (i < fsdq.length) {
+
+        qno.textContent = `Question no: ${i + 1}`;
+
+        ques.textContent = fsdq[i].question;
+
+        options.forEach((option, index) => {
+
+            option.textContent =
+                `${index + 1}. ${fsdq[i].options[index]}`;
+
+            option.classList.remove("selected");
+
+        });
+
+        selectedOption = -1;
     }
-    else if (radio2.checked) {
-        selectedOption = 1;
-    }
-    else if (radio3.checked) {
-        selectedOption = 2;
-    }
-    else if (radio4.checked) {
-        selectedOption = 3;
+}
+
+options.forEach((option, index) => {
+
+    option.addEventListener("click", function () {
+
+        selectedOption = index;
+
+        options.forEach(option => {
+            option.classList.remove("selected");
+        });
+
+        option.classList.add("selected");
+    });
+
+});
+
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "1") {
+        options[0].click();
     }
 
-    if (i >= 0) {
-        if (selectedOption === fsdq[i].answer) {
-            score++;
-        }
+    else if (event.key === "2") {
+        options[1].click();
+    }
+
+    else if (event.key === "3") {
+        options[2].click();
+    }
+
+    else if (event.key === "4") {
+        options[3].click();
+    }
+
+    else if (event.key === "Enter") {
+        nextButton.click();
+    }
+
+});
+
+nextButton.addEventListener("click", function () {
+
+    if (i >= 0 && selectedOption === -1) {
+
+        alert("Please select an option.");
+
+        return;
+    }
+
+    if (i >= 0 && selectedOption === fsdq[i].answer) {
+        score++;
     }
 
     if (i + 1 < fsdq.length) {
-        i++;
 
-        qno.textContent = `Question no: ${i + 1}`;
-        ques.textContent = fsdq[i].question;
+        showQuestion();
 
-        option1.textContent = fsdq[i].options[0];
-        option2.textContent = fsdq[i].options[1];
-        option3.textContent = fsdq[i].options[2];
-        option4.textContent = fsdq[i].options[3];
-
-        radio1.checked = false;
-        radio2.checked = false;
-        radio3.checked = false;
-        radio4.checked = false;
     }
     else {
+
         alert(`Quiz finished! Your score is ${score}/${fsdq.length}`);
+
     }
-}
+
+});
+
+submitButton.addEventListener("click", function () {
+
+    if (i >= 0 && selectedOption === fsdq[i].answer) {
+        score++;
+    }
+
+    alert(`Your score is ${score}/${fsdq.length}`);
+
+});
+
+showQuestion();
